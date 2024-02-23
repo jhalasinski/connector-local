@@ -42,9 +42,6 @@ dependencies {
     //extension to make assests, policies etc. persistent. 
     api(project(":extensions:postgres-flyway"))
     
-    //extension to register external resources as assets
-    api(project(":extensions:asset-collect"))
-    
     // extention for enhancing data dashboard locally
     api(project(":extensions:data-dashboard-local"))
 
