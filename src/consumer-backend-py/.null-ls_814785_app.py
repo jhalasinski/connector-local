@@ -8,10 +8,6 @@ import json
 import datetime
 import magic
 import mimetypes
-import logging
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
@@ -23,10 +19,8 @@ class RequestData(BaseModel):
 
 @app.post("/edr-endpoint")
 async def edr_endpoint(request_data: RequestData):
-    print("Entering edr endpoint", flush=True)
+    print("Entering edr endpoint")
 
-    logger.info("Endpoint has been enterered")
-    
     if not request_data.endpoint or not request_data.authKey or not request_data.authCode:
         return JSONResponse(content={'error': 'Missing or invalid endpoint, authKey or authCode parameters.'}, status_code=400)
 
